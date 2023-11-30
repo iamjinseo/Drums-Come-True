@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/back_img_main"
+    android:orientation="vertical">
+
+
+    <!-- YouTube 동영상을 표시할 뷰 -->
+    <com.pierfrancescosoffritti.androidyoutubeplayer.core.player.views.YouTubePlayerView
+        android:id="@+id/youtube_video"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:autoPlay="false"
+        tools:ignore="MissingConstraints" />
+
+    <!-- 첫 번째 서브 레이아웃 -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/first_sub_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:layout_editor_absoluteY="231dp">
+
+        <TextView
+            android:id="@+id/tutor_title"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/bmhannapro"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="튜토리얼 제목"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toStartOf="@id/tutor_btn"
+            app:layout_constraintStart_toEndOf="@id/tutor_image"
+            app:layout_constraintTop_toTopOf="@id/tutor_image" />
+
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/tutor_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/practice_card_bg"
+            android:text="연습하기"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@+id/first_sub_layout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/tutor_title"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tutor_subtitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:fontFamily="@font/bmhannaair"
+            android:text="부제목"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@id/tutor_btn"
+            app:layout_constraintStart_toStartOf="@id/tutor_title"
+            app:layout_constraintTop_toBottomOf="@id/tutor_title" />
+
+        <ImageView
+            android:id="@+id/tutor_image"
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="16dp"
+            android:background="@drawable/shape_circle"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/second_sub_layout"
+        android:layout_width="match_parent"
+        android:background="@drawable/main_bg"
+        android:layout_margin="20dp"
+        android:layout_height="wrap_content">
+
+        <TextView
+
+            android:id="@+id/tutor_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="16dp"
+
+            android:ellipsize="end"
+            android:fontFamily="@font/bmhannaair"
+            android:text="1. 어쩌고 \n\n2.저쩌고\n\n3.어쩌고저쩌고"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/num_btn"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:singleLine="true"
+            android:text="4"
+            android:textSize="16sp"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tutor_description" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</LinearLayout>

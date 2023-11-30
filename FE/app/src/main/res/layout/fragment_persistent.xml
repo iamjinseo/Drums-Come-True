@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Persistent Bottom Sheet -->
+    <LinearLayout
+        android:id="@+id/persistent_bottom_sheet"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:background="#ebebeb"
+        android:orientation="vertical"
+        app:behavior_hideable="false"
+        app:behavior_peekHeight="20dp"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+        <!-- ViewPager2 for sliding between "녹음" and "메트로놈" -->
+        <com.google.android.material.tabs.TabLayout
+            android:id="@+id/tab_layout"
+            android:layout_width="match_parent"
+            android:background="@color/black"
+            app:tabTextColor="@color/not_selected_color"
+            app:tabSelectedTextColor="@color/selected_color"
+            android:layout_height="20dp">
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="음악선택" />
+
+            <com.google.android.material.tabs.TabItem
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="메트로놈" />
+
+        </com.google.android.material.tabs.TabLayout>
+
+        <androidx.viewpager2.widget.ViewPager2
+            android:id="@+id/view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+    </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
